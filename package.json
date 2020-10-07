@@ -1,0 +1,20 @@
+{
+  "name":        "com.unityext.system",
+  "version":     "2.0.0",
+  "displayName": "UnityExtension / System",
+  "description": "Low Level standalone classes to give support for all other modules.",
+  "unity":       "2018.1",
+  "dependencies": {     
+  },
+ "keywords": [
+    "unity",
+    "extension",
+    "unityext",
+    "system"
+  ],
+  "author": {
+    "name":  "Unity Extension",
+    "email": "eduardo@thelaborat.org",
+    "url":   "https://github.com/UnityExt/"
+  }
+}
