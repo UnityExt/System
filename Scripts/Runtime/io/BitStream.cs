@@ -306,7 +306,7 @@ namespace UnityExt.Sys {
             float  vmax    = p_max<p_min ? p_min : p_max;
             float  vmin    = p_max<p_min ? p_max : p_min;
             float  rng     = vmax-vmin;
-            int    bc      = p_bits>0 ? p_bits : GetMSB(((ulong)rng));
+            int    bc      = p_bits>0 ? p_bits : GetMSB((ulong)rng)+1;
             if(bc<=0) bc = 1;
             float  rmax    = (float)((1<<bc)-1);
             float  r       = rng<=0f   ? 0 : ((p_value-vmin) / rng);
@@ -326,7 +326,7 @@ namespace UnityExt.Sys {
             double vmax    = p_max<p_min ? p_min : p_max;
             double vmin    = p_max<p_min ? p_max : p_min;
             double rng     = vmax-vmin;
-            int    bc      = p_bits>0 ? p_bits : GetMSB(((ulong)rng));
+            int    bc      = p_bits>0 ? p_bits : GetMSB((ulong)rng)+1;
             if(bc<=0) bc = 1;
             double rmax    = (double)((1<<bc)-1);
             double r       = rng<=0f   ? 0 : ((p_value-vmin) / rng);            
@@ -438,7 +438,7 @@ namespace UnityExt.Sys {
             float  vmax    = p_max<p_min ? p_min : p_max;
             float  vmin    = p_max<p_min ? p_max : p_min;
             float  rng     = vmax-vmin;
-            int    bc      = p_bits>0 ? p_bits : GetMSB(((ulong)rng));
+            int    bc      = p_bits>0 ? p_bits : GetMSB((ulong)rng)+1;
             if(bc<=0) bc = 1;
             float  rmax    = (float)((1<<bc)-1);
             ulong  v       = 0;
@@ -459,7 +459,7 @@ namespace UnityExt.Sys {
             double vmax    = p_max<p_min ? p_min : p_max;
             double vmin    = p_max<p_min ? p_max : p_min;
             double rng     = vmax-vmin;
-            int    bc      = p_bits>0 ? p_bits : GetMSB(((ulong)rng));
+            int    bc      = p_bits>0 ? p_bits : GetMSB((ulong)rng)+1;
             if(bc<=0) bc = 1;
             double rmax    = (double)((1<<bc)-1);
             ulong  v       = 0;
@@ -570,7 +570,7 @@ namespace UnityExt.Sys {
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>
-        private int GetMSB(ulong v) {
+        static internal int GetMSB(ulong v) {
             if(v<=0) return 1;
             ulong n = 1;
             if ((v >> 32) == 0) { n = n + 32; v = v << 32; }
