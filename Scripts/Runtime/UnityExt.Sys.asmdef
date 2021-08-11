@@ -1,6 +1,8 @@
 {
     "name": "UnityExt.Sys",
-    "references": [],
+    "references": [
+        "UnityExt.Core"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
