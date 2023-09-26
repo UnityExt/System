@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using UnityExt.Core.IO;
+using UnityExt.Core;
 
 namespace UnityExt.Sys { 
 
